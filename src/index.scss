@@ -4,7 +4,6 @@
     --text: #cdd6f4;
     --subtext: #bac2de;
     --accent: #cba6f7;
-    --highlight: #cba6f7;
     --button-bg: #74c7ec;
     --button-hover: #89dceb;
 }
@@ -30,7 +29,7 @@ body {
     margin-top: 20px;
     font-size: clamp(24px, 6vw, 50px);
     font-weight: 700;
-    color: var(--highlight);
+    color: var(--accent);
     margin-bottom: 20px;
     max-width: 90vw;
     overflow-wrap: break-word;
@@ -52,10 +51,10 @@ body {
 }
 .input:focus {
     outline: none;
-    background-color: var(--highlight);
+    background-color: var(--accent);
     color: #45475a;
 }
-.input::placeholder{
+.input::placeholder {
     color: var(--base);
     opacity: 0.5;
 }
@@ -77,53 +76,42 @@ body {
 .hintButton:hover {
     background-color: var(--button-hover);
 }
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.buttons{
+.buttons {
     max-width: 700px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.answer{
-    font-size: clamp(24px, 6vw, 50px);;
+.answer {
+    font-size: clamp(24px, 6vw, 50px);
 }
-
 .v-card-title {
     font-size: clamp(24px, 6vw, 40px) !important;
-    white-space: normal !important; /* Allow text to wrap */
-    word-break:break-all; /* Break long words if needed */
-    overflow: visible; /* Ensure no hidden text */
+    white-space: normal !important;
+    word-break: break-all;
+    overflow: visible;
 }
-
-
-.close{
+.close {
     color: red !important;
     font-weight: 600 !important;
-    &:hover{
+    &:hover {
         background-color: rgba(255, 0, 0, 0.2);
     }
 }
-.close:hover{
-}
 
 @media screen and (max-width: 550px) {
-    input {
+    .input, .hintButton {
         height: 60px;
         font-size: 1.5rem;
         width: 100%;
-
     }
-    .hintButton {
-        height: 60px;
-        font-size: 1.5rem;
-        width: 100%;
-
-    }
-    .buttons{
+    .buttons {
         flex-direction: column;
+        gap: 10px; 
     }
 }
