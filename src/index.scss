@@ -35,7 +35,7 @@ body {
     max-width: 90vw;
     overflow-wrap: break-word;
 }
-input {
+.input {
     height: 70px;
     width: 75%;
     font-size: 1.75rem;
@@ -50,14 +50,14 @@ input {
     transition: 0.3s ease;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
-input:focus {
+.input:focus {
     outline: none;
     background-color: var(--highlight);
     color: #45475a;
 }
-::placeholder{
+.input::placeholder{
     color: var(--base);
-    opacity: 1;
+    opacity: 0.5;
 }
 .hintButton {
     width: 20%;
@@ -91,6 +91,25 @@ input:focus {
 .answer{
     font-size: clamp(24px, 6vw, 50px);;
 }
+
+.v-card-title {
+    font-size: clamp(24px, 6vw, 40px) !important;
+    white-space: normal !important; /* Allow text to wrap */
+    word-break:break-all; /* Break long words if needed */
+    overflow: visible; /* Ensure no hidden text */
+}
+
+
+.close{
+    color: red !important;
+    font-weight: 600 !important;
+    &:hover{
+        background-color: rgba(255, 0, 0, 0.2);
+    }
+}
+.close:hover{
+}
+
 @media screen and (max-width: 550px) {
     input {
         height: 60px;
