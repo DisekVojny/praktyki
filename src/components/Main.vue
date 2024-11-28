@@ -1,10 +1,12 @@
 <script lang="ts">
 import { ref, onMounted } from 'vue';
 import Pewniaczek from './Pewniaczek.vue';
+import Navbar from './Navbar.vue';
 
 export default {
   components: {
-    Pewniaczek
+    Pewniaczek,
+    Navbar,
   },
   setup() {
     const data = ref<any[] | null>(null); 
@@ -31,16 +33,33 @@ export default {
 </script>
 
 <template>
-  <h1>Pewniaczki</h1>
+  <Navbar/>
 
-  <div v-if="data === null"><h1>Loading...</h1></div>
+  <!-- <Loading/> -->
+   <div v-if="data === null" class="loading">
+      <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
+      <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
+      <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
+    </div>
+     
+  <!-- <div v-if="data === null"><h1>Loading...</h1></div> -->
 
-  <div v-else>
-    <Pewniaczek v-for="(el, i) in data" :key="i" :title="el.title" :image="el.image" :list="el.list" :kod="el.code" :details="el.details"/>
+  <div v-else class="offers">
+    <div>
+      <Pewniaczek v-for="(el, i) in data" :key="i" :title="el.title" :image="el.image" :list="el.list" :kod="el.code" :details="el.details"/>
+    </div>
+
   </div>
 </template>
 
 
 
-<style scoped>
+<style scoped lang="scss">
+ .offers{
+  width: 80vw;
+ }
+
+ .loading *{
+  margin-bottom: 30px;
+ }
 </style>
