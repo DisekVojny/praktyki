@@ -35,15 +35,12 @@ export default {
 <template>
   <Navbar/>
 
-  <!-- <Loading/> -->
    <div v-if="data === null" class="loading">
       <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
       <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
       <v-skeleton-loader color="gray" elevation="24" type="image" height="200px"/>
     </div>
      
-  <!-- <div v-if="data === null"><h1>Loading...</h1></div> -->
-
   <div v-else class="offers">
     <div>
       <Pewniaczek v-for="(el, i) in data" :key="i" :title="el.title" :image="el.image" :list="el.list" :kod="el.code" :details="el.details"/>
