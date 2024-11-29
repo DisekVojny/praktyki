@@ -2,15 +2,18 @@
 import { ref } from 'vue';
 import { getPair } from '../logic.ts';
 import Hint from './Hint.vue';
+import Options from './Options.vue';
 
 const input = ref('');
 const qa = ref(getPair());
 
 function check() {
-  if (input.value === qa.value[1]) {
-    input.value = '';
-    qa.value = getPair();
-  }
+  if (input.value === qa.value[1]) setAnswer()
+}
+
+function setAnswer() {
+  input.value = '';
+  qa.value = getPair();
 }
 
 </script>
@@ -30,4 +33,5 @@ function check() {
       <Hint :answer="qa[1]" />
     </div>
   </div>
+  <Options :fn="setAnswer"/>
 </template>

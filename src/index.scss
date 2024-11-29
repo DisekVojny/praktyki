@@ -104,6 +104,15 @@ body {
     }
 }
 
+.v-input__details{
+    display: none !important;
+}
+
+input[type='checkbox']{
+    height: 80px !important;
+    width: 80px !important;
+}
+
 @media screen and (max-width: 550px) {
     .input, .hintButton {
         height: 60px;

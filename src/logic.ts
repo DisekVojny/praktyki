@@ -1,6 +1,6 @@
 type Words = Record<string, string>;
 
-const words: Words = {
+export const words: Words = {
     "samolot": "l'avion",
     "samochod": "la voiture",
     "lodz": "le bateau",
@@ -36,9 +36,16 @@ const words: Words = {
     "z którego peronu odjeżdża pociąg": "de quel quai part le train"
 };
 
+export let usedWords = {...words}
+
+export function applyChanges(selected: string[]){
+    if(selected.length == 0) return;
+    usedWords = {...words}
+    usedWords = Object.fromEntries(Object.entries(usedWords).filter(([key, _]) => selected.includes(key)));
+}
 
 export function getPair(): [string, string]{
-    const keys = Object.keys(words);
+    const keys = Object.keys(usedWords);
     const randomKey = keys[Math.floor(Math.random() * keys.length)];
-    return [randomKey, words[randomKey]];
+    return [randomKey, usedWords[randomKey]];
 }
