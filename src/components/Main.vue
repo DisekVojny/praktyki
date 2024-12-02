@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import Pewniaczek from './Pewniaczek.vue';
 import Navbar from './Navbar.vue';
 
-const data = ref(null)
+
+
+const data = ref<any>(null)
 async function getData(){
   try {
     const response = await fetch("https://pewniaczki.pl/wp-json/api/bonus");
@@ -13,7 +15,6 @@ async function getData(){
     console.error("Error fetching data:", error);
   }
 };
-
 
 getData()
 </script>
