@@ -72,14 +72,6 @@ const props = defineProps(["title", "image", "list", "kod", "details"])
     }
 }
 
-
-
-
-
-
-
-
-
 .title{
     height: 40px;
     font-size: 30px;

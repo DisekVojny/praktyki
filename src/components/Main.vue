@@ -1,35 +1,21 @@
-<script lang="ts">
+<script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import Pewniaczek from './Pewniaczek.vue';
 import Navbar from './Navbar.vue';
 
-export default {
-  components: {
-    Pewniaczek,
-    Navbar,
-  },
-  setup() {
-    const data = ref<any[] | null>(null); 
-
-    const getData = async () => {
-      try {
-        const response = await fetch("https://pewniaczki.pl/wp-json/api/bonus");
-        const json = await response.json();
-        data.value = json.bonuses; 
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    
-    onMounted(getData);
-
-    
-    return {
-      data
-    };
+const data = ref(null)
+async function getData(){
+  try {
+    const response = await fetch("https://pewniaczki.pl/wp-json/api/bonus");
+    const json = await response.json();
+    data.value = json.bonuses; 
+  } catch (error) {
+    console.error("Error fetching data:", error);
   }
 };
+
+
+getData()
 </script>
 
 <template>
