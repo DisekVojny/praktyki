@@ -1,0 +1,86 @@
+@use "../vars.scss" as *;
+
+.form{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 40vw;
+    border-radius: 30px;
+
+
+    input {
+        margin-left: 20px;
+        align-self:flex-end;
+        font-weight: 600;
+        height: 60px;
+        appearance: none;
+        border: none;
+        outline: none;
+        border-bottom: .1em solid #fff;
+        background: rgba(#fff, .2);
+        border-radius: .2em 0;
+        padding: .4em;
+        color: $base;
+        transition: .5s;
+        font-size: 32px;
+        width: 70%;
+        // box-sizing: content-box;
+
+
+
+        &:focus{
+            background-color: rgba($sky, .2);
+            border-bottom: .2em solid $sky;
+
+        }
+
+        &::placeholder{
+            color: $mauve;
+        }
+    }
+}
+
+.title{
+    font-size: 48px;
+}
+
+.line{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin: 30px 10px;
+
+    svg{
+        transform: scale(2);
+    }
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background: $surface0;
+    font-size: 22px;
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}

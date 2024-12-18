@@ -1,0 +1,114 @@
+@use "../vars.scss" as *;
+
+
+.list{
+    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.yoel, .mesel{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba($crust, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 20px;
+    
+}
+
+.selected{
+    color: $mauve;
+    font-weight: 700;
+    text-shadow: 0px 0px 25px $lavender;
+    transform: scale(1.3);
+}
+
+.every{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    width: 30vw;
+    justify-content: space-between;
+
+}
+
+.name{
+    max-width: 20vw;
+    word-break:break-all;
+    cursor: pointer;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+    &:hover{
+        scale: 1.1;
+        color: $mauve;
+        text-shadow: 0px 0px 25px $lavender;
+    }
+}
+
+.completed{
+    color: green;
+}
+.ncompleted{
+    color: red;
+}
+
+.completed, .ncompleted{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.disabled{
+    opacity: 0.3;
+}
+
+.mesel{
+    flex-direction: column;
+
+    .top{
+        width: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .name{
+        max-width: 60%;
+    }
+
+    .bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .rangeField{
+        width: 50%;
+    }
+
+    .range{
+        width: 100%;
+    }
+}
+
+
+
+
