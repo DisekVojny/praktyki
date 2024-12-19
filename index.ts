@@ -361,6 +361,8 @@ app.delete("/delete/mes", (req, res) => {
 })
 
 
+const port = process.env.PORT || 8080
+
 app.listen(8080, () => {
-    console.log("listening at http://localhost:8080")
+    console.log(`listening at http://localhost:${port}`)
 })

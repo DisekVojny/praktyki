@@ -2,17 +2,18 @@ import pgPromise from "pg-promise"
 const pg = pgPromise();
 
 // recreate db
+
 const server = pg({
-    host: "localhost",
-    port: 5432,
+    host: "db",
+    port: 5433,
     database: "postgres",
     user: "admin",
     password: "admin123"
 })
 
-
 await server.none("DROP DATABASE IF EXISTS habitify")
 await server.none("CREATE DATABASE habitify")
+
 
 import db from "./db";
 
@@ -27,6 +28,9 @@ await db.none("DROP TABLE IF EXISTS yo_habits")
 await db.none("DROP TABLE IF EXISTS mes_habits")
 await db.none("DROP TABLE IF EXISTS yo_done")
 await db.none("DROP TABLE IF EXISTS mes_done")
+console.log(3)
+
+
 
 await db.none(`
     CREATE TABLE users (

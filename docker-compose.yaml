@@ -1,0 +1,11 @@
+services:
+  db: 
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: admin123
+      POSTGRES_USER: admin
+      POSTGRES_DB: habitify
+  app:
+    image: habitify
+    ports: 
+      - 8080:8080
