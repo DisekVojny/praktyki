@@ -28,9 +28,6 @@ await db.none("DROP TABLE IF EXISTS yo_habits")
 await db.none("DROP TABLE IF EXISTS mes_habits")
 await db.none("DROP TABLE IF EXISTS yo_done")
 await db.none("DROP TABLE IF EXISTS mes_done")
-console.log(3)
-
-
 
 await db.none(`
     CREATE TABLE users (
