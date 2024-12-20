@@ -51,7 +51,7 @@ function HabitList() {
 
     console.log(list)
     console.log(list[0].length > 0 || list[1].length > 0)
-    if(list[0].length == 0 && list[1].length == 0){
+    if(list[0].length == 0 && list[1].length == 0 && list[2].length == 0) {
         return (<h1 className={styles.info}>No habits to show</h1>)
     }
     return ( 

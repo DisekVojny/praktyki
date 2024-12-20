@@ -1,15 +1,24 @@
 services:
   db: 
-    image: postgres
+    image: postgres:alpine
+    ports:
+      - 5432
     environment:
       POSTGRES_PASSWORD: admin123
       POSTGRES_USER: admin
-      POSTGRES_DB: habitify
-    volumes:
-      -./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      POSTGRES_DB: postgres
+    networks:
+      - habitify-network
+
   app:
     image: habitify
     depends_on:
       - db
     ports: 
       - 8080:8080
+    networks:
+      - habitify-network
+
+networks:
+  habitify-network:
+    driver: bridge

@@ -14,4 +14,6 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-CMD ["bun", "run", "db/prepare.ts", "&&",  "bun", "run", "index.ts"]
+# CMD ["bun", "run", "db/prepare.ts", "&&",  "bun", "run", "index.ts"]
+CMD ["./setup.sh"]
+

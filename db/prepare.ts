@@ -5,16 +5,17 @@ const pg = pgPromise();
 
 const server = pg({
     host: "db",
-    port: 5433,
+    port: 5432,
     database: "postgres",
     user: "admin",
     password: "admin123"
 })
 
+
 await server.none("DROP DATABASE IF EXISTS habitify")
-await server.none("CREATE DATABASE habitify")
+await server.none("CREATE DATABASE habitify WITH TEMPLATE template0 LC_COLLATE='C' LC_CTYPE='C'")
 
-
+server.$pool.end()
 import db from "./db";
 
 // USERS (id, username varchar255, password hash char64)
@@ -100,7 +101,7 @@ await db.none(`
     CREATE INDEX idx_mes_done_start ON mes_done (start);
     CREATE INDEX idx_mes_done_target ON mes_done (target);
 `);
-
+db.$pool.end()
 
 console.log(1);
 
